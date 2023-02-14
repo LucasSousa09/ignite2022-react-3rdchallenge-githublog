@@ -1,7 +1,6 @@
 import styled from 'styled-components'
 
-export const HomeContainer = styled.main`
-  position: relative;
+export const PostContainer = styled.div`
   display: flex;
   flex-direction: column;
 

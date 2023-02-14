@@ -13,6 +13,12 @@ export const ProfileContainer = styled.div`
   padding: 2rem 2.5rem;
 
   gap: 2rem;
+
+  img {
+    border-radius: 8px;
+    max-height: 148px;
+    min-height: 148px;
+  }
 `
 
 export const ProfileInfo = styled.div`

@@ -26,15 +26,22 @@ export const PostInfoContainer = styled.div`
       font-size: 0.75rem;
       font-weight: 700;
       font-family: 'Nunito', sans-serif;
+      line-height: 1.2rem;
 
       text-transform: uppercase;
       text-decoration: none;
       color: ${(props) => props.theme.blue};
+
+      border-bottom: 1px solid transparent;
+
+      &:hover {
+        border-bottom: 1px solid ${(props) => props.theme.blue};
+      }
     }
   }
 `
 
-export const ProfileInfo = styled.div`
+export const PostInfoDetails = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -50,18 +57,5 @@ export const ProfileInfo = styled.div`
     margin-top: 0.5rem;
 
     gap: 2rem;
-  }
-`
-
-export const InfoSnippet = styled.div`
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-
-  svg {
-    height: 18px;
-    width: 18px;
-
-    color: ${(props) => props.theme['base-label']};
   }
 `

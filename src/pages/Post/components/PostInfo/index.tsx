@@ -1,4 +1,5 @@
-import { InfoSnippet, PostInfoContainer, ProfileInfo } from './styles'
+import { PostInfoContainer, PostInfoDetails } from './styles'
+import { InfoSnippet } from '../../../../components/InfoSnippet/styles'
 
 import {
   faCalendarDay,
@@ -20,7 +21,7 @@ export function PostInfo() {
           Ver no Github <FontAwesomeIcon icon={faArrowUpRightFromSquare} />
         </a>
       </nav>
-      <ProfileInfo>
+      <PostInfoDetails>
         <h1>JavaScript data types and data structures</h1>
         <div>
           <InfoSnippet>
@@ -36,7 +37,7 @@ export function PostInfo() {
             <span>5 Comentários</span>
           </InfoSnippet>
         </div>
-      </ProfileInfo>
+      </PostInfoDetails>
     </PostInfoContainer>
   )
 }

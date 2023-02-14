@@ -83,8 +83,15 @@ export const PublicationCard = styled.div`
   flex-direction: column;
   background-color: ${(props) => props.theme['base-post']};
 
+  border: 2px solid ${(props) => props.theme['base-post']};
   border-radius: 10px;
   padding: 32px;
+
+  cursor: pointer;
+
+  &:hover {
+    border: 2px solid ${(props) => props.theme['base-label']};
+  }
 
   > div {
     display: flex;
@@ -100,10 +107,9 @@ export const PublicationCard = styled.div`
     }
 
     span {
+      padding-top: 0.25rem;
       font-size: 0.875rem;
-      line-height: 2rem;
       color: ${(props) => props.theme['base-label']};
-      white-space: nowrap;
     }
   }
 

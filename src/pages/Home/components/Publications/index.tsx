@@ -1,4 +1,6 @@
 import { useEffect, useState } from 'react'
+import { useForm } from 'react-hook-form'
+
 import { api } from '../../../../lib/axios'
 
 import formatDistanceToNow from 'date-fns/formatDistanceToNow'
@@ -15,15 +17,21 @@ interface PostsData {
   title: string
   body: string
   created_at: string
+  number: number
+}
+
+interface SearchData {
+  searchbar: string
 }
 
 export function Publications() {
-  const [text, setText] = useState('')
   const [posts, setPosts] = useState<PostsData[]>([])
+
+  const { register, handleSubmit } = useForm<SearchData>()
 
   async function getPostsData() {
     const response = await api.get(
-      `search/issues?q=${text}%20repo:LucasSousa09/ignite2022-react-3rdchallenge-githublog`,
+      `search/issues?q=""%20repo:LucasSousa09/ignite2022-react-3rdchallenge-githublog`,
     )
     setPosts(response.data.items)
   }
@@ -32,6 +40,13 @@ export function Publications() {
     getPostsData()
   }, [])
 
+  async function searchForPost(data: SearchData) {
+    const response = await api.get(
+      `search/issues?q=${data.searchbar}%20repo:LucasSousa09/ignite2022-react-3rdchallenge-githublog`,
+    )
+    setPosts(response.data.items)
+  }
+
   return (
     <PublicationsContainer>
       <SearchBarContainer>
@@ -39,15 +54,17 @@ export function Publications() {
           <strong>Publicações</strong>
           <span>{posts.length} publicações</span>
         </div>
-        <input
-          type="text"
-          placeholder="Buscar conteúdo"
-          onChange={(evt) => setText(evt.target.value)}
-        />
+        <form onSubmit={handleSubmit(searchForPost)}>
+          <input
+            type="text"
+            placeholder="Buscar conteúdo"
+            {...register('searchbar')}
+          />
+        </form>
       </SearchBarContainer>
       <PublicationsCardsContainer>
         {posts.map((post) => (
-          <PublicationCard key={post.title}>
+          <PublicationCard key={post.title} href={`/post/${post.number}`}>
             <div>
               <h2>{post.title}</h2>
               <span>

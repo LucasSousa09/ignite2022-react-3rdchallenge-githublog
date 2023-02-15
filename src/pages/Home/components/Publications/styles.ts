@@ -78,7 +78,7 @@ export const PublicationsCardsContainer = styled.div`
   gap: 2rem;
 `
 
-export const PublicationCard = styled.div`
+export const PublicationCard = styled.a`
   display: flex;
   flex-direction: column;
   background-color: ${(props) => props.theme['base-post']};
@@ -88,6 +88,8 @@ export const PublicationCard = styled.div`
   padding: 32px;
 
   cursor: pointer;
+
+  text-decoration: none;
 
   &:hover {
     border: 2px solid ${(props) => props.theme['base-label']};

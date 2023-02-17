@@ -14,6 +14,8 @@ The GitHub Blog is the third challenge of the React Trail of the Rocketseat Igni
 - React-Hook-Form
 - React-Router-Dom
 
-Figma link: <https://www.figma.com/file/391mHKy7kzxLJmrL69qbyz/GitHub-Blog-(Community)?node-id=0%3A1&t=SAHro1iYIaFfVTlh-0>
+Links:
 
-Application link: 
+- Figma: <https://www.figma.com/file/391mHKy7kzxLJmrL69qbyz/GitHub-Blog-(Community)?node-id=0%3A1&t=SAHro1iYIaFfVTlh-0>
+
+- Application: <https://github-blog-portfolio.netlify.app/> 
